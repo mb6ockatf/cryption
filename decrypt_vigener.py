@@ -1,0 +1,33 @@
+__all__ = ['decrypt_Vigener']
+
+
+def decrypt_Vigener(message: str, key: str, alphabet: list or tuple) -> str:
+    """
+     Multialphabet decryption (Vigener's cipher)
+     :param message: message to be decrypted
+     :param key: key. All key characters must exist in alphabet
+     :param alphabet: which alphabet message and key are written in. Can't include spaces
+     :return: decrypted message
+     """
+    digit = 0
+    per_letter_keys = [alphabet.index(j) for j in key]
+    answer = []
+    for message_index in range(len(message)):
+        if message[message_index] == ' ':
+            answer += [' ']
+            continue
+        char = message[message_index]
+        answer += [alphabet[(alphabet.index(char) - per_letter_keys[digit] - 1) % len(alphabet)]]
+        digit = 0 if digit == len(key) - 1 else digit + 1
+    return "".join(answer)
+
+
+if __name__ == "__main__":
+    print(decrypt_Vigener("вв яыють ьб цюэта бхаьщ ягуъябд фрчё ъ ъта",
+                          key="стол",
+                          alphabet=['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з',
+                                    'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р',
+                                    'с',
+                                    'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ',
+                                    'ы', 'ь', 'э', 'ю', 'я']
+                          ))

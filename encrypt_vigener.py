@@ -1,9 +1,12 @@
+__all__ = ['encrypt_Vigener']
+
+
 def encrypt_Vigener(message: str, key: str, alphabet: list or tuple) -> str:
     """
     Multialphabet encryption (Vigener's cipher)
     :param message: message to be encrypted
     :param key: key for encryption. All key characters must exist in alphabet
-    :param alphabet: which alphabet message and key are written in
+    :param alphabet: which alphabet message and key are written in. Can't include spaces
     :return: encrypted message
     """
     digit = 0  # number from 0 to len(key) - 1
@@ -27,3 +30,4 @@ if __name__ == '__main__':
                                     'с',
                                     'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ',
                                     'ы', 'ь', 'э', 'ю', 'я']))
+
