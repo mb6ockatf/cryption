@@ -6,7 +6,7 @@ def encrypt_Vigener(message: str, key: str, alphabet: list or tuple) -> str:
     :param alphabet: which alphabet message and key are written in
     :return: encrypted message
     """
-    digit = 0  # number from 0 to len(key) - 1. Necessary to choose which
+    digit = 0  # number from 0 to len(key) - 1
     per_letter_keys = [alphabet.index(j) for j in key]
     answer = []
     for message_index in range(len(message)):
