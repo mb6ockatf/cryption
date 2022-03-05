@@ -1,6 +1,6 @@
-def encrypt_Vigener(message: str, key: str, alphabet) -> str:
+def encrypt_Vigener(message: str, key: str, alphabet: list or tuple) -> str:
     """
-    Multialphabet encryption (Vigener's encryption)
+    Multialphabet encryption (Vigener's cipher)
     :param message: message to be encrypted
     :param key: key for encryption. All key characters must exist in alphabet
     :param alphabet: which alphabet message and key are written in
